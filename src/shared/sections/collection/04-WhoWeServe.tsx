@@ -1,6 +1,9 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import RevealText from "@/shared/effects/RevealText";
 import SectionEyebrow from "@/shared/components/SectionEyebrow";
+
+type GsapContext = { revert: () => void };
 
 const ARROW = (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
@@ -17,6 +20,77 @@ const ITEMS = [
 
 // Source: index-14 / Section3 (Selected Series grid), repurposed as "Who We Serve".
 export default function WhoWeServe() {
+    const gridRef = useRef<HTMLDivElement | null>(null);
+
+    // Pin the featured box (NO.01) while the right-hand list (NO.02–NO.05)
+    // scrolls past, releasing once the list ends. Uses GSAP ScrollTrigger (not
+    // CSS position:sticky, which doesn't engage under ScrollSmoother's transform
+    // scroll). Pins for exactly (listHeight - featuredHeight) so it unpins at NO.05.
+    useEffect(() => {
+        const grid = gridRef.current;
+        if (!grid) return;
+
+        const reduceMotion =
+            typeof window.matchMedia === "function" &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduceMotion) return;
+
+        let cancelled = false;
+        let ctx: GsapContext | null = null;
+        const disposers: Array<() => void> = [];
+
+        const init = async () => {
+            const gsap = (await import("gsap")).default;
+            const ScrollTrigger = (await import("gsap/ScrollTrigger")).default;
+            gsap.registerPlugin(ScrollTrigger);
+            if (cancelled) return;
+
+            ctx = (gsap as unknown as {
+                context: (fn: () => void, scope?: Element) => GsapContext;
+            }).context(() => {
+                gsap.matchMedia().add("(min-width: 1200px)", () => {
+                    const featured = grid.querySelector<HTMLElement>(".sec-3-home-14__featured");
+                    const list = grid.querySelector<HTMLElement>(".sec-3-home-14__list");
+                    if (!featured || !list) return;
+
+                    ScrollTrigger.create({
+                        trigger: featured,
+                        start: "top 40",
+                        end: () => "+=" + Math.max(0, list.offsetHeight - featured.offsetHeight),
+                        pin: featured,
+                        pinSpacing: false,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
+                    });
+                });
+            }, grid);
+
+            if (cancelled) {
+                ctx.revert();
+                ctx = null;
+                return;
+            }
+
+            const refresh = () => { if (!cancelled) ScrollTrigger.refresh(); };
+            grid.querySelectorAll("img").forEach((img) => {
+                if (img.complete) return;
+                img.addEventListener("load", refresh, { once: true });
+                disposers.push(() => img.removeEventListener("load", refresh));
+            });
+            const timers = [300, 1000, 2000].map((ms) => window.setTimeout(refresh, ms));
+            disposers.push(() => timers.forEach((t) => clearTimeout(t)));
+        };
+
+        init();
+
+        return () => {
+            cancelled = true;
+            disposers.forEach((fn) => fn());
+            ctx?.revert();
+            ctx = null;
+        };
+    }, []);
+
     return (
         <section className="sec-3-home-14" aria-label="Who we serve">
             <div className="sec-3-home-14__inner">
@@ -40,7 +114,7 @@ export default function WhoWeServe() {
                     </div>
                 </div>
 
-                <div className="sec-3-home-14__grid">
+                <div className="sec-3-home-14__grid" ref={gridRef}>
                     <article className="sec-3-home-14__featured">
                         <Link className="sec-3-home-14__featured-link" to="mailto:hellothere@sortafamous.in" aria-label="Founders and entrepreneurs">
                             <div className="sec-3-home-14__featured-frame anim-zoomin-wrap">
