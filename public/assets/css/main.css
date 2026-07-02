@@ -37226,4 +37226,11 @@ body.at-magic-cursor #magic-cursor {
   filter: brightness(0);
 }
 
+/* Shrink the pinned scroll-stack items so the section hugs its content instead
+   of leaving a tall empty gap below (space under the pin is invisible cream
+   spacer). Paired with the 60vh first-item height set in ScrollSectionEffects. */
+#how-it-works .scroll-section .item {
+  min-height: 60vh;
+}
+
 /*# sourceMappingURL=main.css.map */
