@@ -125,7 +125,7 @@ export default function Footer10() {
                 />
             </div>
 
-            <div className="container-2200 px-lg-5 px-3 position-relative">
+            <div className="container sf-section-gutter position-relative">
                 <div className="footer-10__hero position-relative">
                     <div className="footer-10__deco footer-10__deco--left d-none d-md-block" aria-hidden="true">
                         <img

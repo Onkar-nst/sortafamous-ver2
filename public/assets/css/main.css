@@ -18869,7 +18869,7 @@ input.footer-15__form-input:focus {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: clamp(20px, 2vw, 32px) clamp(20px, 5.5vw, 96px);
+  padding: clamp(20px, 2vw, 32px) clamp(20px, 5.2vw, 100px);
   padding-top: clamp(100px, 12vw, 140px);
 }
 .sec-1-home-11__topbar-label {
@@ -18890,7 +18890,7 @@ input.footer-15__form-input:focus {
   flex: 1;
   display: flex;
   align-items: flex-start;
-  padding: 0 clamp(20px, 5.5vw, 96px);
+  padding: 0 clamp(20px, 5.2vw, 100px);
 }
 .sec-1-home-11__title {
   font-size: clamp(64px, 14vw, 200px);
@@ -18909,7 +18909,7 @@ input.footer-15__form-input:focus {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
-  padding: clamp(32px, 4vw, 56px) clamp(20px, 5.5vw, 96px);
+  padding: clamp(32px, 4vw, 56px) clamp(20px, 5.2vw, 100px);
 }
 .sec-1-home-11__desc {
   font-size: clamp(14px, 1.1vw, 16px);

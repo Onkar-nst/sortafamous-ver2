@@ -93,7 +93,7 @@ export default function WhoWeServe() {
 
     return (
         <section className="sec-3-home-14" aria-label="Who we serve">
-            <div className="sec-3-home-14__inner">
+            <div className="container sf-section-gutter">
                 <div className="sec-3-home-14__head">
                     <div className="sec-3-home-14__head-left">
                         <SectionEyebrow label="Who We Serve" className="at_fade_anim" data-fade-from="bottom" data-delay=".1" />

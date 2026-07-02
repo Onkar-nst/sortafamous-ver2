@@ -25,64 +25,62 @@ const STEPS = [
 // Source: index-3 / Section10 (Our Growth Process). Content: Sorta Famous — How It Works.
 export default function HowItWorks() {
     return (
-        <div id="how-it-works" className="container-2200">
-            <div className="home-3-section-10 section-fix overflow-hidden bg-neutral-50 rounded-5 mx-lg-3 mx-2">
-                <div className="container sf-section-gutter pt-100 pb-100">
-                    <div className="row section-title-pin">
-                        <div className="col-lg-5 h-100">
-                            <SectionEyebrow label="How It Works" />
-                            <h3 className="reveal-text mb-0">
-                                <RevealText>A proven process that turns strategy into visibility that sticks.</RevealText>
-                            </h3>
-                            <ul className="list-unstyled navigation-section-10 navigation-active-item pt-50">
-                                {AVATARS.map((src, i) => (
-                                    <li key={i}>
-                                        <div className="item">
-                                            <img
-                                                src={src}
-                                                alt=""
-                                                width={120}
-                                                height={120}
-                                                className="img-cover p-relative" loading="lazy" />
-                                            <div className="rectangular bg-neutral-0 border-100" />
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+        <section id="how-it-works" className="home-3-section-10 section-fix overflow-hidden bg-neutral-50 pt-100 pb-100">
+            <div className="container sf-section-gutter">
+                <div className="row section-title-pin">
+                    <div className="col-lg-5 h-100">
+                        <SectionEyebrow label="How It Works" />
+                        <h3 className="reveal-text mb-0">
+                            <RevealText>A proven process that turns strategy into visibility that sticks.</RevealText>
+                        </h3>
+                        <ul className="list-unstyled navigation-section-10 navigation-active-item pt-50">
+                            {AVATARS.map((src, i) => (
+                                <li key={i}>
+                                    <div className="item">
+                                        <img
+                                            src={src}
+                                            alt=""
+                                            width={120}
+                                            height={120}
+                                            className="img-cover p-relative" loading="lazy" />
+                                        <div className="rectangular bg-neutral-0 border-100" />
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                        <div className="col-xxl-6 col-lg-7 ms-auto p-relative pt-50">
-                            <div className="pb-30 fz-font-label neutral-900 fw-600">
-                                [ Our six-step process ]
-                            </div>
-                            <div className="scroll-section vertical-section section">
-                                <div className="wrapper">
-                                    <div role="list" className="list">
-                                        {STEPS.map((step, i) => (
-                                            <div key={i} className="item">
-                                                <div className="container bg-neutral-0 rounded-4 border-100 p-relative">
-                                                    <div className="rectangular bg-neutral-0 border-100" />
-                                                    <div className="row align-items-center py-3">
-                                                        <div className="col-12 h-100">
-                                                            <div className="d-flex flex-column p-md-5 p-3 justify-content-between h-100">
-                                                                <div className="block-number icon-shape mb-20 size-50 bg-neutral-100 rounded-3">
-                                                                    <h6 className="number mb-0 fw-600">{step.number}</h6>
-                                                                </div>
-                                                                <h5 className="mb-4">{step.title}</h5>
-                                                                <p className="mb-0 fz-font-xl">{step.description}</p>
+                    <div className="col-xxl-6 col-lg-7 ms-auto p-relative pt-50">
+                        <div className="pb-30 fz-font-label neutral-900 fw-600">
+                            [ Our six-step process ]
+                        </div>
+                        <div className="scroll-section vertical-section section">
+                            <div className="wrapper">
+                                <div role="list" className="list">
+                                    {STEPS.map((step, i) => (
+                                        <div key={i} className="item">
+                                            <div className="container bg-neutral-0 rounded-4 border-100 p-relative">
+                                                <div className="rectangular bg-neutral-0 border-100" />
+                                                <div className="row align-items-center py-3">
+                                                    <div className="col-12 h-100">
+                                                        <div className="d-flex flex-column p-md-5 p-3 justify-content-between h-100">
+                                                            <div className="block-number icon-shape mb-20 size-50 bg-neutral-100 rounded-3">
+                                                                <h6 className="number mb-0 fw-600">{step.number}</h6>
                                                             </div>
+                                                            <h5 className="mb-4">{step.title}</h5>
+                                                            <p className="mb-0 fz-font-xl">{step.description}</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        ))}
-                                    </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

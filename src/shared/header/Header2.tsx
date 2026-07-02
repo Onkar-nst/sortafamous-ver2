@@ -21,7 +21,7 @@ export default function Header2(_props: Header2Props) {
   return (
     <header>
       <div className="at-header-area at-header-spacing header-transparent">
-        <div className="container">
+        <div className="container sf-section-gutter">
           <div className="row align-items-center">
             <div className="col-6">
               <div className="at-header-logo">

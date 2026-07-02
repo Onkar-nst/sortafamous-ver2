@@ -179,7 +179,7 @@ export default function InsightsFromPartners() {
             const timers = [200, 800, 1600].map((ms) => window.setTimeout(refresh, ms));
             disposers.push(() => timers.forEach((t) => clearTimeout(t)));
             if (typeof document !== "undefined" && "fonts" in document) {
-                document.fonts.ready.then(refresh).catch(() => {});
+                document.fonts.ready.then(refresh).catch(() => { });
             }
             refresh();
         };
@@ -196,7 +196,7 @@ export default function InsightsFromPartners() {
 
     return (
         <section ref={sectionRef} data-local-pin className="sec-8-home-8 p-relative">
-            <div className="container-fluid sec-8-home-8__container">
+            <div className="container sf-section-gutter">
                 <div className="sec-8-home-8__top d-flex align-items-end justify-content-between">
                     <SectionEyebrow label="Testimonials" />
                     <span className="sec-8-home-8__trusted text-decoration-underline at_fade_anim">Trusted by modern brands</span>

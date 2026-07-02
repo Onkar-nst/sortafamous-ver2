@@ -62,103 +62,101 @@ const QUOTE_ICON = (
 
 export default function HowWeWork() {
     return (
-        <div className="container-2200 bg-neutral-50">
-            <section className="sec-3-home-4 pt-130 rounded-5 mx-lg-3 mx-2 fix p-relative bg-neutral-0">
-                {/* Background grid */}
-                <div className="position-absolute w-100 h-100 d-grid top-0 md:grid-cols-7 gap-0 z-0 opacity-10">
-                    {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+        <section id="our-values" className="sec-3-home-4 pt-130 fix p-relative bg-neutral-0">
+            {/* Background grid */}
+            <div className="position-absolute w-100 h-100 d-grid top-0 md:grid-cols-7 gap-0 z-0 opacity-10">
+                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                    <div
+                        key={i}
+                        className={
+                            i === 3
+                                ? "position-relative h-100 border-r border-dark/01 md:border-none"
+                                : "position-relative h-100 overflow-hidden d-md-block border-dark/01"
+                        }
+                    >
+                        <div className="absolute bottom-0 left-0 right-0 border-white/10" />
+                        {i === 3 && (
+                            <div className="absolute top-[20%] left-0 right-0 h-[30%] bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            <div className="container sf-section-gutter p-relative z-1">
+                <div className="row align-items-end g-4">
+                    <div className="col-lg-6 col-md-10">
+                        <SectionEyebrow label="Our Values" />
+                        <h3 className="reveal-text mb-0">
+                            <RevealText>
+                                Values that guide every click and campaign
+                            </RevealText>
+                        </h3>
+                    </div>
+                    <div className="col-lg-3 ms-auto d-flex justify-content-lg-end">
                         <div
-                            key={i}
-                            className={
-                                i === 3
-                                    ? "position-relative h-100 border-r border-dark/01 md:border-none"
-                                    : "position-relative h-100 overflow-hidden d-md-block border-dark/01"
-                            }
+                            className="at-btn-group at_fade_anim"
+                            data-delay=".4"
+                            data-fade-from="bottom"
+                            data-ease="bounce"
                         >
-                            <div className="absolute bottom-0 left-0 right-0 border-white/10" />
-                            {i === 3 && (
-                                <div className="absolute top-[20%] left-0 right-0 h-[30%] bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
-                            )}
+                            <a className="at-btn-circle" href="#contact" onClick={handleSectionScroll("#contact")}>
+                                {ARROW_CIRCLE}
+                            </a>
+                            <a className="at-btn z-index-1" href="#contact" onClick={handleSectionScroll("#contact")}>
+                                Let&apos;s get Sorta Famous
+                            </a>
+                            <a className="at-btn-circle" href="#contact" onClick={handleSectionScroll("#contact")}>
+                                {ARROW_CIRCLE}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row g-4 pt-60">
+                    {PROCESS_CARDS.map((card) => (
+                        <div key={card.num} className="col-lg-3 col-md-6">
+                            <div className={`card__process-card at_fade_anim ${card.cardClass}`} data-delay=".4" data-fade-from="bottom" data-ease="bounce">
+                                <div className="card__process-visual">
+                                    <div className={`card__process-pill ${card.pillClass}`} />
+                                    <span className="card__process-num">{card.num}</span>
+                                </div>
+                                <div className="card__process-content">
+                                    <h6 className="card__process-title">{card.title}</h6>
+                                    <p className="card__process-desc">{card.description}</p>
+                                    <div className="card__process-divider" />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="container sf-section-gutter p-relative z-1">
-                    <div className="row align-items-end g-4">
-                        <div className="col-lg-6 col-md-10">
-                            <SectionEyebrow label="Our Values" />
-                            <h3 className="reveal-text mb-0">
-                                <RevealText>
-                                    Values that guide every click and campaign
-                                </RevealText>
-                            </h3>
-                        </div>
-                        <div className="col-lg-3 ms-auto d-flex justify-content-lg-end">
-                            <div
-                                className="at-btn-group at_fade_anim"
-                                data-delay=".4"
-                                data-fade-from="bottom"
-                                data-ease="bounce"
-                            >
-                                <a className="at-btn-circle" href="#contact" onClick={handleSectionScroll("#contact")}>
-                                    {ARROW_CIRCLE}
-                                </a>
-                                <a className="at-btn z-index-1" href="#contact" onClick={handleSectionScroll("#contact")}>
-                                    Let&apos;s get Sorta Famous
-                                </a>
-                                <a className="at-btn-circle" href="#contact" onClick={handleSectionScroll("#contact")}>
-                                    {ARROW_CIRCLE}
-                                </a>
-                            </div>
+                <div className="row align-items-center g-md-5 g-4 mt-lg-0 mt-20">
+                    <div className="col-lg-3 order-lg-1 order-2">
+                        <div
+                            className="at_fade_anim"
+                            data-delay=".4"
+                            data-fade-from="bottom"
+                            data-ease="bounce"
+                        >
+                            <img
+                                src="/assets/imgs/pages/img-85.webp"
+                                alt="orisa"
+                                width={400}
+                                height={400}
+                                className="w-100" loading="lazy" />
                         </div>
                     </div>
-
-                    <div className="row g-4 pt-60">
-                        {PROCESS_CARDS.map((card) => (
-                            <div key={card.num} className="col-lg-3 col-md-6">
-                                <div className={`card__process-card at_fade_anim ${card.cardClass}`} data-delay=".4" data-fade-from="bottom" data-ease="bounce">
-                                    <div className="card__process-visual">
-                                        <div className={`card__process-pill ${card.pillClass}`} />
-                                        <span className="card__process-num">{card.num}</span>
-                                    </div>
-                                    <div className="card__process-content">
-                                        <h6 className="card__process-title">{card.title}</h6>
-                                        <p className="card__process-desc">{card.description}</p>
-                                        <div className="card__process-divider" />
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="row align-items-center g-md-5 g-4 mt-lg-0 mt-20">
-                        <div className="col-lg-3 order-lg-1 order-2">
-                            <div
-                                className="at_fade_anim"
-                                data-delay=".4"
-                                data-fade-from="bottom"
-                                data-ease="bounce"
-                            >
-                                <img
-                                    src="/assets/imgs/pages/img-85.webp"
-                                    alt="orisa"
-                                    width={400}
-                                    height={400}
-                                    className="w-100" loading="lazy" />
-                            </div>
-                        </div>
-                        <div className="col-lg-4 order-lg-2 order-1">
-                            <div className="mb-3">{QUOTE_ICON}</div>
-                            <span className="fz-font-3xl neutral-900 reveal-text">
-                                <RevealText>
-                                    We turn strategy into visibility that sticks — and reputations that
-                                    last.
-                                </RevealText>
-                            </span>
-                        </div>
+                    <div className="col-lg-4 order-lg-2 order-1">
+                        <div className="mb-3">{QUOTE_ICON}</div>
+                        <span className="fz-font-3xl neutral-900 reveal-text">
+                            <RevealText>
+                                We turn strategy into visibility that sticks — and reputations that
+                                last.
+                            </RevealText>
+                        </span>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 }

@@ -23,7 +23,7 @@ const SUBMIT_ARROW_SVG = (
 export default function CTA() {
     return (
         <div id="contact" className="sec-11-home-7 pt-120 pb-120">
-            <div className="container-2200 px-lg-5 px-3">
+            <div className="container sf-section-gutter">
                 <div className="row align-items-start g-4 g-xl-5">
                     <div className="col-xl-5 col-lg-6 col-12">
                         <div className="sec-11-home-7__eyebrow d-inline-flex align-items-center gap-2 mb-4 text-uppercase">

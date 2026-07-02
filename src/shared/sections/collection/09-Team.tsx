@@ -211,7 +211,7 @@ export default function Team() {
 
     return (
         <section id="team" ref={sectionRef} className="sec-6-home-9 bg-neutral-50 overflow-x-hidden">
-            <div className="sec-6-home-9__container">
+            <div className="container sf-section-gutter">
                 <header className="sec-6-home-9__header">
                     <SectionEyebrow label="Meet Our Team" />
                     <h2 className="sec-6-home-9__title">

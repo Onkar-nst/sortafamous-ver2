@@ -54,69 +54,67 @@ const SERVICES = [
 
 export default function WhatWeDo() {
     return (
-        <div id="what-we-do" className="container-2200">
-            <section className="at-service-area bg-neutral-50 rounded-5 mx-lg-3 mx-2 pt-120 pb-80">
-                <div className="container sf-section-gutter">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="at-service-subtitle-wrap at-about-border d-flex justify-content-between gap-3 mb-50">
-                                <SectionEyebrow label="What we do" />
-                                <span className="fs-font-md fw-500 text-decoration-underline">
-                                    Fame is earned
-                                </span>
-                            </div>
+        <section id="what-we-do" className="at-service-area bg-neutral-50 pt-120 pb-80">
+            <div className="container sf-section-gutter">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="at-service-subtitle-wrap at-about-border d-flex justify-content-between gap-3 mb-50">
+                            <SectionEyebrow label="What we do" />
+                            <span className="fs-font-md fw-500 text-decoration-underline">
+                                Fame is earned
+                            </span>
                         </div>
                     </div>
                 </div>
-                <div className="scroll-section vertical-section position-relative">
-                    <div className="wrapper">
-                        {SERVICES.map((service, index) => (
-                            <div key={index} className="item">
-                                <div className={`container bg-neutral-50 pt-20 ${service.itemClass}`}>
-                                    <div className="row align-items-center">
-                                        <div className="col-lg-6 col-12">
-                                            <div className="d-flex flex-column justify-content-between h-100 py-4 px-2">
-                                                <h1 className="fz-ds-1 fw-500 text-scale-anim-2 pb-xxl-5 pb-4">
-                                                    {service.title}
-                                                </h1>
-                                                <div className="d-xxl-flex align-items-end">
-                                                    <p className="fz-font-2xl neutral-950 reveal-text pe-xxl-5 mb-3">
-                                                        <RevealText>{service.description}</RevealText>
-                                                    </p>
-                                                    <div className="d-flex flex-column flex-md-row flex-xxl-column justify-content-between ps-xxl-5 ps-3">
-                                                        <ul className="text-nowrap neutral-950">
-                                                            {service.listLeft.map((item, i) => (
-                                                                <li key={i}>{item}</li>
-                                                            ))}
-                                                        </ul>
-                                                        <ul className="text-nowrap neutral-950">
-                                                            {service.listRight.map((item, i) => (
-                                                                <li key={i}>{item}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
+            </div>
+            <div className="scroll-section vertical-section position-relative">
+                <div className="wrapper">
+                    {SERVICES.map((service, index) => (
+                        <div key={index} className="item">
+                            <div className={`container sf-section-gutter bg-neutral-50 pt-20 ${service.itemClass}`}>
+                                <div className="row align-items-center">
+                                    <div className="col-lg-6 col-12">
+                                        <div className="d-flex flex-column justify-content-between h-100 py-4 px-2">
+                                            <h1 className="fz-ds-1 fw-500 text-scale-anim-2 pb-xxl-5 pb-4">
+                                                {service.title}
+                                            </h1>
+                                            <div className="d-xxl-flex align-items-end">
+                                                <p className="fz-font-2xl neutral-950 reveal-text pe-xxl-5 mb-3">
+                                                    <RevealText>{service.description}</RevealText>
+                                                </p>
+                                                <div className="d-flex flex-column flex-md-row flex-xxl-column justify-content-between ps-xxl-5 ps-3">
+                                                    <ul className="text-nowrap neutral-950">
+                                                        {service.listLeft.map((item, i) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                    <ul className="text-nowrap neutral-950">
+                                                        {service.listRight.map((item, i) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-lg-5 offset-lg-1">
-                                            <div className="rounded-4 overflow-hidden">
-                                                <img
-                                                    src={service.image}
-                                                    alt={service.title}
-                                                    width={600}
-                                                    height={400}
-                                                    className="img-cover"
-                                                    loading="lazy"
-                                                />
-                                            </div>
+                                    </div>
+                                    <div className="col-lg-5 offset-lg-1">
+                                        <div className="rounded-4 overflow-hidden">
+                                            <img
+                                                src={service.image}
+                                                alt={service.title}
+                                                width={600}
+                                                height={400}
+                                                className="img-cover"
+                                                loading="lazy"
+                                            />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 }

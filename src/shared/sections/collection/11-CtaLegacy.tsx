@@ -16,7 +16,7 @@ export default function CtaLegacy() {
                     style={{ width: "auto", height: "auto" }} loading="lazy" />
             </div>
 
-            <div className="container-fluid sec-9-home-8__container">
+            <div className="container sf-section-gutter">
                 <div className="row align-items-center justify-content-between g-5">
                     {/* Left copy */}
                     <div className="col-xl-6">
