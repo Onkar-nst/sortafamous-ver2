@@ -75,7 +75,7 @@ export default function WhatWeDo() {
                                 <div className="row align-items-center">
                                     <div className="col-lg-6 col-12">
                                         <div className="d-flex flex-column justify-content-between h-100 py-4 px-2">
-                                            <h1 className="fz-ds-1 fw-500 text-scale-anim-2 pb-xxl-5 pb-4">
+                                            <h1 className="fz-ds-1 what-we-do__title fw-500 text-scale-anim-2 pb-xxl-5 pb-4">
                                                 {service.title}
                                             </h1>
                                             <div className="d-xxl-flex align-items-end">

@@ -1739,6 +1739,19 @@ input[type=color] {
   font-size: var(--at-fz-ds-1);
 }
 
+/* "What we do" service titles: shrink so each fits on a single line */
+#what-we-do .fz-ds-1,
+#what-we-do .what-we-do__title {
+  font-size: clamp(1.75rem, 4vw, 54px) !important;
+  line-height: 1.05;
+}
+@media (min-width: 992px) {
+  #what-we-do .fz-ds-1,
+  #what-we-do .what-we-do__title {
+    white-space: nowrap;
+  }
+}
+
 .fz-24 {
   font-size: var(--at-fz-24);
 }
@@ -17218,7 +17231,7 @@ input.footer-15__form-input:focus {
 .sec-6-home-9__header {
   text-align: center;
   max-width: 1100px;
-  margin: 0 auto clamp(40px, 5vw, 88px);
+  margin: 0 auto clamp(64px, 7vw, 128px);
 }
 .sec-6-home-9__tag {
   display: inline-flex;
@@ -17326,10 +17339,15 @@ input.footer-15__form-input:focus {
   margin: 0 0 4px;
   font-family: var(--at-ff-heading);
   font-weight: 600;
-  font-size: clamp(26px, 2.5vw, 36px);
+  font-size: clamp(18px, 1.6vw, 24px);
   line-height: 1.1;
   letter-spacing: -0.05em;
   color: var(--at-neutral-900, #1d1d1d);
+}
+@media (min-width: 992px) {
+  .sec-6-home-9__name {
+    white-space: nowrap;
+  }
 }
 .sec-6-home-9__role {
   margin: 0;
@@ -37195,6 +37213,17 @@ body.at-magic-cursor #magic-cursor {
   max-width: 100%;
   padding-left: clamp(20px, 5.2vw, 100px);
   padding-right: clamp(20px, 5.2vw, 100px);
+}
+
+/*------------------------------------------------------------------
+  How It Works — process icons: half size + black.
+------------------------------------------------------------------*/
+#how-it-works .navigation-section-10 .item {
+  width: 50px;
+  height: 50px;
+}
+#how-it-works .navigation-section-10 .item img {
+  filter: brightness(0);
 }
 
 /*# sourceMappingURL=main.css.map */
