@@ -27,7 +27,7 @@ export default function HowItWorks() {
     return (
         <div id="how-it-works" className="container-2200">
             <div className="home-3-section-10 section-fix overflow-hidden bg-neutral-50 rounded-5 mx-lg-3 mx-2">
-                <div className="container pt-100 pb-100">
+                <div className="container sf-section-gutter pt-100 pb-100">
                     <div className="row section-title-pin">
                         <div className="col-lg-5 h-100">
                             <SectionEyebrow label="How It Works" />

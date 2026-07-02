@@ -83,7 +83,7 @@ export default function HowWeWork() {
                     ))}
                 </div>
 
-                <div className="container p-relative z-1">
+                <div className="container sf-section-gutter p-relative z-1">
                     <div className="row align-items-end g-4">
                         <div className="col-lg-6 col-md-10">
                             <SectionEyebrow label="Our Values" />

@@ -37185,4 +37185,31 @@ body.at-magic-cursor #magic-cursor {
   }
 }
 
+/*------------------------------------------------------------------
+  Uniform section gutter. Bootstrap .container centres at max-width 1320,
+  which leaves the plain-.container sections flush-ish while the custom
+  section containers use clamp(20px,5.2vw,100px). This class forces the same
+  full-width + clamp gutter so every section's left/right padding matches.
+------------------------------------------------------------------*/
+.sf-section-gutter {
+  max-width: 100%;
+  padding-left: clamp(20px, 5.2vw, 100px);
+  padding-right: clamp(20px, 5.2vw, 100px);
+}
+
+/*------------------------------------------------------------------
+  Who We Serve — sticky featured box.
+  On the 2-column layout (≥1200px) the featured box (NO.01) pins while the
+  right-hand list (NO.02–NO.05) scrolls past, then releases once the grid
+  ends (after the last item). align-self:start keeps it from stretching to
+  the list height so sticky has room to move.
+------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+  .sec-3-home-14__featured {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

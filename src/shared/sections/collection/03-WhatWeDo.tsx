@@ -11,7 +11,7 @@ const SERVICES = [
             "Get your stories placed where they count, with the journalists you actually want. We build the relationships and the angles that turn into real coverage.",
         listLeft: ["Media Strategy", "Journalist Outreach", "Press Releases"],
         listRight: ["Media Lists", "Coverage Tracking"],
-        image: "/assets/imgs/sortafamous/Brand-Services-Home.png",
+        image: "/assets/imgs/pages/img-118.webp",
         itemClass: "pb-40",
     },
     {
@@ -56,7 +56,7 @@ export default function WhatWeDo() {
     return (
         <div id="what-we-do" className="container-2200">
             <section className="at-service-area bg-neutral-50 rounded-5 mx-lg-3 mx-2 pt-120 pb-80">
-                <div className="container">
+                <div className="container sf-section-gutter">
                     <div className="row">
                         <div className="col-12">
                             <div className="at-service-subtitle-wrap at-about-border d-flex justify-content-between gap-3 mb-50">

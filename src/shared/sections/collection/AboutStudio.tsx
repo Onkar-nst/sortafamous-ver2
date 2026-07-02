@@ -1,4 +1,3 @@
-import OdometerCounter from "@/shared/elements/OdometerCounter";
 import RevealText from "@/shared/effects/RevealText";
 import { handleSectionScroll } from "@/shared/utils/smoothScrollTo";
 import SectionEyebrow from "@/shared/components/SectionEyebrow";
@@ -61,7 +60,7 @@ const STATS = [
 export default function AboutStudio() {
     return (
         <section className="sec-3-home-11" aria-label="About Sorta Famous">
-            <div className="container">
+            <div className="container sf-section-gutter">
                 {/* Header row: eyebrow + title (left) / intro paragraph (right) */}
                 <div className="row align-items-end">
                     <div className="col-lg-7">
@@ -206,7 +205,7 @@ export default function AboutStudio() {
                         <div key={stat.label} className="col-6 col-md-3">
                             <div className="sec-3-home-11__stat at_fade_anim" data-delay={stat.delay}>
                                 <p className="sec-3-home-11__stat-num mb-0">
-                                    <OdometerCounter count={stat.count} />{stat.suffix}
+                                    {stat.count}{stat.suffix}
                                 </p>
                                 <p className="sec-3-home-11__stat-label mb-0">{stat.label}</p>
                             </div>

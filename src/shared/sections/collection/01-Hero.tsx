@@ -43,7 +43,7 @@ export default function Hero() {
                 </div>
 
                 {/* Hero headline */}
-                <div className="sec-1-home-11__headline at_fade_anim" data-delay=".1" data-fade-from="bottom" style={{ alignItems: "flex-end", paddingBottom: 0, marginTop: "auto" }}>
+                <div className="sec-1-home-11__headline at_fade_anim" data-delay=".1" data-fade-from="bottom" style={{ alignItems: "flex-end", paddingBottom: 0, marginTop: "auto", marginBottom: "clamp(-120px, -9vw, -60px)" }}>
                     <h1 className="sec-1-home-11__title" style={{ fontSize: "clamp(52px, 10vw, 132px)", opacity: 0.6 }}>
                         <span className="d-block">Fame Is Earned.</span>
                         <span className="d-block">We Manage The Rest.</span>
@@ -51,7 +51,7 @@ export default function Hero() {
                 </div>
 
                 {/* Bottom row: scroll cue */}
-                <div className="sec-1-home-11__footer">
+                <div className="sec-1-home-11__footer" style={{ paddingTop: 0, paddingBottom: "clamp(16px, 2vw, 28px)" }}>
 
                     {/* Scroll indicator */}
                     <div

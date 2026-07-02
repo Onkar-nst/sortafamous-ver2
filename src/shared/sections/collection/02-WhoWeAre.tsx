@@ -23,7 +23,7 @@ const SLIDES = [
 export default function WhoWeAre() {
     return (
         <section id="who-we-are" className="sec-1-about pt-150 overflow-hidden">
-            <div className="container pb-100">
+            <div className="container sf-section-gutter pb-100">
                 <div className="row align-items-center g-4">
                     <div className="col-12">
                         <SectionEyebrow label="Who We Are" />

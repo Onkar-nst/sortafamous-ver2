@@ -9,7 +9,7 @@ import WhoWeServe from "@/shared/sections/collection/04-WhoWeServe";
 import HowItWorks from "@/shared/sections/collection/05-HowItWorks";
 import HowWeWork from "@/shared/sections/collection/10-HowWeWork";
 import StoriesThatStick from "@/shared/sections/collection/12-StoriesThatStick";
-import TrustedByClients from "@/shared/sections/collection/07-TrustedByClients";
+// import TrustedByClients from "@/shared/sections/collection/07-TrustedByClients"; // pricing hidden for now
 import InsightsFromPartners from "@/shared/sections/collection/InsightsFromPartners";
 import CtaLegacy from "@/shared/sections/collection/11-CtaLegacy";
 import CTA from "@/shared/sections/collection/08-CTA";
@@ -63,7 +63,8 @@ export default function CollectionPage() {
       <HowItWorks />
       <HowWeWork />
       <StoriesThatStick />
-      <TrustedByClients />
+      {/* Pricing section hidden for now */}
+      {/* <TrustedByClients /> */}
       <InsightsFromPartners />
       <CtaLegacy />
       <CTA />
